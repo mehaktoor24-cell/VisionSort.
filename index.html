@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>VisionSort AI</title>
+
+<style>
+
+body{
+    font-family: Arial;
+    text-align:center;
+    background:#f2f2f2;
+}
+
+
+.box{
+    background:white;
+    width:400px;
+    margin:80px auto;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 0 10px gray;
+}
+
+
+button{
+    background:#4CAF50;
+    color:white;
+    padding:12px 25px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+
+h1{
+    color:#333;
+}
+
+
+.result{
+    font-size:25px;
+    color:blue;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="box">
+
+
+<h1>♻️ VisionSort AI</h1>
+
+<p>Upload Waste Image</p>
+
+
+<form action="/predict" method="post" enctype="multipart/form-data">
+
+
+<input type="file" name="image" required>
+
+<br><br>
+
+
+<button type="submit">
+Predict
+</button>
+
+
+</form>
+
+
+{% if prediction %}
+
+<h2 class="result">
+
+Waste Type: {{prediction}}
+
+</h2>
+
+{% endif %}
+
+
+</div>
+
+
+</body>
+
+</html>
